@@ -20,10 +20,10 @@ public class TennisGame1 implements TennisGame {
 
     public String getScore() {
         if (weHaveADraw()) {
-            return reportScoreForADraw();
+            return reportScoreForDraw();
         }
-        else if (scoreGreaterFour()) {
-            return reportScoreGreaterFour();
+        if (scoreGreaterFour()) {
+            return reportAdvantageOrWin();
         }
         return reportDefaultScore();
     }
@@ -36,14 +36,14 @@ public class TennisGame1 implements TennisGame {
         return m_score1 >= 4 || m_score2 >= 4;
     }
 
-    private String reportScoreForADraw() {
+    private String reportScoreForDraw() {
         if (m_score1 < 3) {
             return determineScoreName(m_score1) + "-All";
         }
         return "Deuce";
     }
 
-    private String reportScoreGreaterFour() {
+    private String reportAdvantageOrWin() {
         int scoreDifference = m_score1 - m_score2;
         if (scoreDifference == 1) return "Advantage player1";
         if (scoreDifference == -1) return "Advantage player2";
