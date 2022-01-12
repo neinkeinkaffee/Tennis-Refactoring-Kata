@@ -7,15 +7,7 @@ public class Score1 {
         this.score2 = score2;
     }
 
-    public void incrementScore1() {
-        score1 += 1;
-    }
-
-    public void incrementScore2() {
-        score2 += 1;
-    }
-
-    public String reportScore() {
+    public String toString() {
         if (draw()) {
             return reportScoreForDraw();
         }

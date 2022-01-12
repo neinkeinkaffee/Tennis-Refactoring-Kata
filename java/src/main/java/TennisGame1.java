@@ -1,16 +1,18 @@
 public class TennisGame1 implements TennisGame {
-    private Score1 score = new Score1(0, 0);
+    private Player1 player1 = new Player1();
+    private Player1 player2 = new Player1();
 
     public void wonPoint(String playerName) {
         if (playerName == "player1") {
-            score.incrementScore1();
-        }
-        else {
-            score.incrementScore2();
+            player1.wonPoint();
+        } else {
+            player2.wonPoint();
         }
     }
 
     public String getScore() {
-        return score.reportScore();
+        Score1 score = new Score1(player1.getPoints(), player2.getPoints());
+        return score.toString();
     }
+
 }
