@@ -41,20 +41,13 @@ public class TennisGame1 implements TennisGame {
         switch (m_score1)
         {
             case 0:
-                score = "Love-All";
-                break;
+                return "Love-All";
             case 1:
-                score = "Fifteen-All";
-                break;
+                return "Fifteen-All";
             case 2:
-                score = "Thirty-All";
-                break;
-            default:
-                score = "Deuce";
-                break;
-
+                return "Thirty-All";
         }
-        return score;
+        return "Deuce";
     }
 
     private String reportScoreGreaterFour() {
